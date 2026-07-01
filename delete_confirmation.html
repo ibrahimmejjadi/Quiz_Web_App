@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Delete User</title>
+  </head>
+  <body>
+    <h1>Are you sure?</h1>
+    <p>Do you want to delete user <strong>{{user[1]}}</strong>?</p>
+    <p>This will also delete all their scores!</p>
+
+    <form method="POST" action="/admin/delete/{{user[0]}}/confirmation">
+      <button type="submit">Yes, Delete</button>
+    </form>
+
+    <a href="/admin/full">No, Go Back</a>
+  </body>
+</html>

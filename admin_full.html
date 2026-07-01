@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Admin Full Panel</title>
+  </head>
+
+  <body>
+    <h1>Welcome, {{username}} - Admin Full</h1>
+
+    <h2>ALL Users</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+      {% for u in users %}
+      <tr>
+        <td>{{u[0]}}</td>
+        <td>{{u[1]}}</td>
+        <td>{{u[2]}}</td>
+        <td>{{u[3]}}</td>
+        <td>
+          <a href="/admin/delete/{{u[0]}}">Delete</a> | 
+          <form method="POST" action="/admin/reset/{{u[0]}}" style="display:inline">
+              <button type="submit">Reset Scores</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h2>Create New user</h2>
+    <form method="POST" action="/admin/full">
+      <p><input type="text" name="username" placeholder="Username"></p>
+      <p><input type="text" name="email" placeholder="Email"></p>
+      <p><input type="text" name="password" placeholder="Password"></p>
+    
+      <p>
+        <select>
+          <option value="user">User</option>
+          <option value="admin-mini">Admin Mini</option>
+          <option value="admin-full">Admin Full</option>
+        </select>
+      </p>
+      <button type="submit">Create User</button>
+    </form> 
+    
+    <br>
+    <a href="/admin/mini">View Scores</a>
+
+    <br>
+    <a href="/logout">Logout</a>
+  </body>
+</html>

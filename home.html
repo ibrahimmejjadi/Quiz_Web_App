@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Quiz_web</title>
+  </head>
+  <body>
+    <h1>Welcome, {{username}}</h1>
+    <p>Your role: {{role}}</p>
+    <a href="/logout">Logout</a>
+
+    <h2>Choose a Quiz</h2>
+    <ul>
+      
+      {% for quiz in quizzes %}  <!-- quiz like for i in list  (quiz is i) -->
+        <li><a href="/quiz/{{quiz[0]}}">{{quiz[1]}}</a></li>
+      {% endfor %}
+
+    </ul>
+
+  </body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <h1>Welcome, {{username}}</h1>
+    <h2>All Students Scores</h2>
+    <table border="1">
+      <tr>
+        <th>Quiz</th>
+        <th>Score</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+
+      {% for s in scores %}
+      <tr>
+        <td>{{s[0]}}</td>
+        <td>{{s[1]}}/3</td>
+        <td>{% if s[2] >= 1 %}Pass{% else %}Fail{% endif %}</td>
+        <td>{{s[3]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="/admin/mini">Back</a>
+
+
+  </body>
+
+</html>
