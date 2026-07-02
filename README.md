@@ -1,4 +1,4 @@
-# Quiz Web App — Flask + SQLite
+# Quiz Web App - Flask + SQLite
 
 A role-based quiz web application built with Python and Flask.
 Designed for classroom use: teachers manage students, students take quizzes.
